@@ -15,7 +15,11 @@ namespace DatabaseConnectionTest
                 connection.Open();
 
 
+<<<<<<< HEAD
                 Console.WriteLine("Enter 1 if you want to see the team table and Enter 2 for add new team , Enter 3 for delete any team , Enter 4 for update data:");
+=======
+                Console.WriteLine("Enter 1 if you want to see the team table and Enter 2 for add new team , Enter 3 for delete any team:");
+>>>>>>> origin/master
                 int a = Convert.ToInt32(Console.ReadLine());
 
                 while (a > 0)
@@ -161,6 +165,7 @@ namespace DatabaseConnectionTest
 
                             break;
 
+<<<<<<< HEAD
                         case 4:
                             Console.WriteLine("Enter the TeamID of the team you want to update:");
                             int teamId = Convert.ToInt32(Console.ReadLine());
@@ -243,12 +248,18 @@ namespace DatabaseConnectionTest
                             break;
 
 
+=======
+>>>>>>> origin/master
                         default:
                             break;
                     }
 
+<<<<<<< HEAD
                     Console.WriteLine("Enter 0 for exit ,Enter 1 if you want to see the team table and Enter 2 for add new team, Enter 3 for delete any team " +
                         "Enter 4 for update data :");
+=======
+                    Console.WriteLine("Enter 0 for exit ,Enter 1 if you want to see the team table and Enter 2 for add new team, Enter 3 for delete any team :");
+>>>>>>> origin/master
                     a = Convert.ToInt32(Console.ReadLine());
                 }
                 connection.Close();
