@@ -165,7 +165,7 @@ namespace DatabaseConnectionTest
                             Console.WriteLine("Enter the TeamID of the team you want to update:");
                             int teamId = Convert.ToInt32(Console.ReadLine());
 
-                            Console.WriteLine("Select the field you want to update:");
+                            Console.WriteLine("Select the item you want to update:");
                             Console.WriteLine("1. Team Name");
                             Console.WriteLine("2. Player Count");
                             Console.WriteLine("3. Stadium Name");
