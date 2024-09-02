@@ -30,7 +30,7 @@ namespace DatabaseConnectionTest
                             break;
 
                         case 2:
-                            AddNewaTeams(connection);
+                            AddNewTeams(connection);
 
                             Console.WriteLine("This is new Teams table :");
 
@@ -41,7 +41,7 @@ namespace DatabaseConnectionTest
 
                             DisplayTeams(connection);
 
-                            DeleteTeam(connection);
+                            DeleteTeams(connection);
 
                             break;
 
@@ -86,7 +86,7 @@ namespace DatabaseConnectionTest
             }
         }
 
-        static void AddNewaTeams(SqlConnection connection)
+        static void AddNewTeams(SqlConnection connection)
         {
             Console.Write("enter your team name: ");
             String TeamName = Console.ReadLine();
@@ -131,7 +131,7 @@ namespace DatabaseConnectionTest
             }
         }
 
-        static void DeleteTeam(SqlConnection connection)
+        static void DeleteTeams(SqlConnection connection)
         {
             Console.Write("Enter the TeamID of the team you want to delete: ");
             int teamIdToDelete = Convert.ToInt32(Console.ReadLine());
