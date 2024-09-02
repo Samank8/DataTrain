@@ -15,10 +15,8 @@ namespace DatabaseConnectionTest
                 connection.Open();
 
 
-
                 Console.WriteLine("Enter 1 if you want to see the team table and Enter 2 for add new team , Enter 3 for delete any team , Enter 4 for update data:");
 
-                Console.WriteLine("Enter 1 if you want to see the team table and Enter 2 for add new team , Enter 3 for delete any team:");
 
                 int a = Convert.ToInt32(Console.ReadLine());
 
@@ -28,18 +26,7 @@ namespace DatabaseConnectionTest
                     switch (a)
                     {
                         case 1:
-                            string sqlTeams1 = "SELECT * FROM Teams";
-                            SqlCommand command1 = new SqlCommand(sqlTeams1, connection);
-
-
-
-                            using (SqlDataReader reader = command1.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    Console.WriteLine($"Team ID: {reader["TeamID"]}, Team Name: {reader["TeamName"]}");
-                                }
-                            }
+                            DisplayTeams(connection);
                             break;
 
                         case 2:
@@ -88,19 +75,7 @@ namespace DatabaseConnectionTest
 
                         case 3:
 
-                            string sqlTeams2 = "SELECT * FROM Teams";
-                            SqlCommand command2 = new SqlCommand(sqlTeams2, connection);
-
-
-
-                            using (SqlDataReader reader = command2.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    Console.WriteLine($"Team ID: {reader["TeamID"]}, Team Name: {reader["TeamName"]}");
-                                }
-                            }
-
+                            DisplayTeams(connection);
 
                             Console.Write("Enter the TeamID of the team you want to delete: ");
                             int teamIdToDelete = Convert.ToInt32(Console.ReadLine());
@@ -256,7 +231,7 @@ namespace DatabaseConnectionTest
                     Console.WriteLine("Enter 0 for exit ,Enter 1 if you want to see the team table and Enter 2 for add new team, Enter 3 for delete any team " +
                         "Enter 4 for update data :");
 
-                    Console.WriteLine("Enter 0 for exit ,Enter 1 if you want to see the team table and Enter 2 for add new team, Enter 3 for delete any team :");
+   
 
                     a = Convert.ToInt32(Console.ReadLine());
                 }
@@ -264,6 +239,20 @@ namespace DatabaseConnectionTest
             }
 
             Console.ReadKey();
+        }
+        
+        static void DisplayTeams(SqlConnection connection)
+        {
+            string SqlTeams = "SELECT * FROM Teams";
+            SqlCommand command = new SqlCommand(SqlTeams, connection);
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Console.WriteLine($"Team ID: {reader["TeamID"]}, Team Name: {reader["TeamName"]}");
+                }
+            }
         }
     }
 }
